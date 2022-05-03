@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>sarasmoe.snk</AssemblyOriginatorKeyFile>
+    <AssemblyName>Calendar.Framework</AssemblyName>
+    <RootNamespace>Calendar.Framework</RootNamespace>
+    <Authors>Excel Soft - Hyderabad</Authors>
+    <Company>Rudhvi Pvt Ltd.</Company>
+    <Product>Technical Framework</Product>
+    <Copyright>Copyright © 2022 Rudhvi Pvt Ltd.</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Utility\Filter\**" />
+    <EmbeddedResource Remove="Utility\Filter\**" />
+    <None Remove="Utility\Filter\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.S3" Version="3.7.7.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.3" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.19.70" />
+    <PackageReference Include="StackExchange.Redis" Version="2.1.30" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Utility\Security\" />
+    <Folder Include="Utility\Serialize\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>

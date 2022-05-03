@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework", "Framework\Framework.csproj", "{A1FB13A9-1AFC-44EF-B012-F4D6BD58BD77}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{945C30E8-9DAF-4042-92FF-122A094EF44E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAPI", "TestAPI\TestAPI.csproj", "{DA87587B-EA79-46F1-8613-F8E0B3CB09F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1FB13A9-1AFC-44EF-B012-F4D6BD58BD77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1FB13A9-1AFC-44EF-B012-F4D6BD58BD77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1FB13A9-1AFC-44EF-B012-F4D6BD58BD77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1FB13A9-1AFC-44EF-B012-F4D6BD58BD77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{945C30E8-9DAF-4042-92FF-122A094EF44E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{945C30E8-9DAF-4042-92FF-122A094EF44E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{945C30E8-9DAF-4042-92FF-122A094EF44E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{945C30E8-9DAF-4042-92FF-122A094EF44E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA87587B-EA79-46F1-8613-F8E0B3CB09F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA87587B-EA79-46F1-8613-F8E0B3CB09F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA87587B-EA79-46F1-8613-F8E0B3CB09F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA87587B-EA79-46F1-8613-F8E0B3CB09F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DA9161C-98EC-4B41-8CCF-45B12A998DA4}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://estfs.excelindia.com/tfs/hdc
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DataAccess\\DataAccess.csproj
+		SccProjectName1 = DataAccess
+		SccLocalPath1 = DataAccess
+		SccProjectUniqueName2 = Framework\\Framework.csproj
+		SccProjectName2 = Framework
+		SccLocalPath2 = Framework
+		SccProjectUniqueName3 = TestAPI\\TestAPI.csproj
+		SccProjectName3 = TestAPI
+		SccLocalPath3 = TestAPI
+	EndGlobalSection
+EndGlobal

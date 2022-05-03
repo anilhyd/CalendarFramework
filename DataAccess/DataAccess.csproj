@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>framework.snk</AssemblyOriginatorKeyFile>
+    <AssemblyName>Calendar.Framework.DataAccess</AssemblyName>
+    <RootNamespace>Calendar.Framework.DataAccess</RootNamespace>
+    <Authors>Excel Soft - Hyderabad</Authors>
+    <Product>Technical Framework</Product>
+    <Company>Rudhvi Pvt Ltd.</Company>
+    <Copyright>Copyright © 2022 Rudhvi Pvt Ltd.</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Oracle.EntityFrameworkCore" Version="2.19.70" />
+  </ItemGroup>
+
+</Project>
