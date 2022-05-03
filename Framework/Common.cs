@@ -6,6 +6,7 @@ namespace Calendar.Framework
 {
     public class Common
     {
+
         #region Property : GuiID
         /// <summary>
         /// Returns the Formated String (yyyy-MM-ddTHH:mm:ss.fff).
