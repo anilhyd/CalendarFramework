@@ -250,7 +250,49 @@ namespace Calendar.Framework
             return obj;
         }
 
+        internal async Task<FrameworkResponse> ExceuteFRAsync<T>(object instance, Dictionary<string, string> criteria, string method, PageContext context)
+        {
+#if TRACELOG //Executes this code only if you add POSTDEBUG to Conditiional Compilation Symbols
+            DateTime start = DateTime.Now;
+            context.TraceMessage.Append(UtilityManager.TraceStart.Replace("@StartTime", start.ToString("dd/MM/yyyy HH:mm:ss:fffffff")).Replace("@Method", "RP-Fetch").Replace("@EndTime", "@RP-Fetch"));
+#endif
+            //UserContext userContext = Context.UserContext;
+            //if (userContext == null)
+            //    throw new LoginException("SE0001", null) { ErrorCode = "SE0001" };
 
+            FrameworkResponse objs = default(FrameworkResponse);
+            LocalBase local = new LocalBase();
+            objs = await local.FetchExecuteAsync<FrameworkResponse>(instance, method);
+
+
+#if TRACELOG //Executes this code only if you add POSTDEBUG to Conditiional Compilation Symbols
+            UtilityManager.ApendEndTraceString(context, start, DateTime.Now, "@RP-Fetch");
+#endif
+
+            return objs;
+        }
+
+        internal async Task<FrameworkResponse> ExceuteFRAsync<T>(object instance, object criteria, string method, PageContext context)
+        {
+#if TRACELOG //Executes this code only if you add POSTDEBUG to Conditiional Compilation Symbols
+            DateTime start = DateTime.Now;
+            context.TraceMessage.Append(UtilityManager.TraceStart.Replace("@StartTime", start.ToString("dd/MM/yyyy HH:mm:ss:fffffff")).Replace("@Method", "RP-Fetch").Replace("@EndTime", "@RP-Fetch"));
+#endif
+            //UserContext userContext = Context.UserContext;
+            //if (userContext == null)
+            //    throw new LoginException("SE0001", null) { ErrorCode = "SE0001" };
+
+            FrameworkResponse objs = default(FrameworkResponse);
+            LocalBase local = new LocalBase();
+            objs = await local.FetchExecuteAsync<FrameworkResponse>(instance, method);
+
+
+#if TRACELOG //Executes this code only if you add POSTDEBUG to Conditiional Compilation Symbols
+            UtilityManager.ApendEndTraceString(context, start, DateTime.Now, "@RP-Fetch");
+#endif
+
+            return objs;
+        }
         #endregion
 
         #region Process

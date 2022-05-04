@@ -120,7 +120,7 @@ namespace Calendar.Framework
         /// Gets or sets the filtring criteria.
         /// </summary>
         public Dictionary<string, string> Criteria { get; set; }
-
+        public object CriteriaAdv { get; set; }
         #endregion
 
         #region Property : FrameworkResponse
@@ -480,6 +480,85 @@ namespace Calendar.Framework
             return response;
         }
 
+        public async Task<FrameworkResponse> ExceuteFRAsync(Dictionary<string, string> criteria, string method)
+        {
+#if TRACELOG //Executes this code only if you add POSTDEBUG to Conditiional Compilation Symbols
+            DateTime start = DateTime.Now;
+            this.PageContext.TraceMessage.Append(UtilityManager.TraceStart.Replace("@StartTime", start.ToString("dd/MM/yyyy HH:mm:ss:fffffff")).Replace("@Method", "BB-FetchExecute").Replace("@EndTime", "@BB-FetchExecute"));
+#endif
+            FrameworkResponse response = default(FrameworkResponse);
+            try
+            {
+                this.Criteria = criteria;
+#if FAKEBO
+                // create an instance of the business object.
+                return MethodCaller.CallMethod(this, method);
+#endif
+                response = await proxy.ExceuteFRAsync<T>(this, criteria, method, PageContext);
+            }
+            //catch (SAF.Core.Security.LoginException)
+            //{
+            //    throw;
+            //}
+            catch (FrameworkException)
+            {
+                // Logging the Exception, It will log all the exeception raised by server
+                // Components, other than "VALEX" i.e. Business Or Validation Rules violation
+                // LogManager.WriteExceptionLog(
+            }
+            catch (System.Exception)
+            {
+                // Logging the Exception, It will log all the exeception raised by server Components.
+                // LogManager.WriteExceptionLog(ex);
+            }
+
+#if TRACELOG //Executes this code only if you add POSTDEBUG to Conditiional Compilation Symbols
+            UtilityManager.ApendEndTraceString(PageContext, start, DateTime.Now, "@BB-FetchExecute");
+            UtilityManager.WriteTraceLog(start, FetchExecuteMethod, PageContext, null);
+#endif
+
+            return response;
+        }
+
+        public async Task<FrameworkResponse> ExceuteFRAsync(object criteria, string method)
+        {
+#if TRACELOG //Executes this code only if you add POSTDEBUG to Conditiional Compilation Symbols
+            DateTime start = DateTime.Now;
+            this.PageContext.TraceMessage.Append(UtilityManager.TraceStart.Replace("@StartTime", start.ToString("dd/MM/yyyy HH:mm:ss:fffffff")).Replace("@Method", "BB-FetchExecute").Replace("@EndTime", "@BB-FetchExecute"));
+#endif
+            FrameworkResponse response = default(FrameworkResponse);
+            try
+            {
+                this.CriteriaAdv = criteria;
+#if FAKEBO
+                // create an instance of the business object.
+                return MethodCaller.CallMethod(this, method);
+#endif
+                response = await proxy.ExceuteFRAsync<T>(this, criteria, method, PageContext);
+            }
+            //catch (SAF.Core.Security.LoginException)
+            //{
+            //    throw;
+            //}
+            catch (FrameworkException)
+            {
+                // Logging the Exception, It will log all the exeception raised by server
+                // Components, other than "VALEX" i.e. Business Or Validation Rules violation
+                // LogManager.WriteExceptionLog(
+            }
+            catch (System.Exception)
+            {
+                // Logging the Exception, It will log all the exeception raised by server Components.
+                // LogManager.WriteExceptionLog(ex);
+            }
+
+#if TRACELOG //Executes this code only if you add POSTDEBUG to Conditiional Compilation Symbols
+            UtilityManager.ApendEndTraceString(PageContext, start, DateTime.Now, "@BB-FetchExecute");
+            UtilityManager.WriteTraceLog(start, FetchExecuteMethod, PageContext, null);
+#endif
+
+            return response;
+        }
         #endregion
 
         #region Excecute
