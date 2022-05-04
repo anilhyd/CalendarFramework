@@ -34,7 +34,7 @@ namespace Calendar.Framework
         /// <summary>
         /// Local varible for method name Fetch.
         /// </summary>
-        private const string FetchMethod = "Fetch";
+        private const string FetchMethod = "FetchAsync";
 
         /// <summary>
         /// Local varible for method name save.
